@@ -1,0 +1,177 @@
+
+<div style="  background-color: #bdd4e7; height: 100%;">
+    <div class="container" style="padding:2em">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+<div class="col-md-6">
+  <b>
+    1) Problema do conjunto e seus elementos únicos
+  </b>
+
+</div>
+<div class="col-md-6">
+
+      <button mat-raised-button mat-button color="primary" style="margin-top: 5px;"
+      matTooltip="Por definição, um conjunto não pode ter elementos repetidos.
+      Faça um programa capaz de ler um número inteiro N (1<=N<=1000) e N inteiros K (-
+      1000<=K<=1000).
+      A saída deverá ser um conjunto formado pelos K inteiros. Os elementos deverão ser
+      exibidos em ordem crescente. "
+      aria-label="Button that displays a tooltip when focused or hovered over">
+Me conte mais
+</button>
+</div>
+      </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div *ngFor="let res of resource">
+Clique aqui e adicione um input
+<mat-icon aria-hidden="false"  (click)="addRes(res)" aria-label="more">exposure_plus_1</mat-icon>
+<br>
+              <div class="fields">
+                <div *ngFor="let resourceField of res.resourceInputFields; index as i">
+                  <div class="row">
+                    <div class="col-md-6">
+                  <input type="number" matInput placeholder="Ex. 15" [(ngModel)]="resourceValues[i]" />
+                  </div>
+                  <div class="col-md-6">
+                  <mat-icon aria-hidden="false" (click)="removeRes(res, i)" aria-label="mina">exposure_neg_1</mat-icon>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          <button mat-button color="primary" (click)="ler()">Efetuar conjunto</button>
+          </div>
+          <div class="col-md-6">
+            <b style="padding: 2em;">
+              <h6 style="font-size: 16px;">
+               Seu resultado é: {{val1}}
+              </h6>
+              </b>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+        <b>
+          2) Problema da operação entre números binários
+
+        </b>
+        </div>
+        <div class="col-md-6">
+        <button mat-raised-button mat-button color="primary"  style="margin-top: 5px;"
+        matTooltip="Faça um programa capaz de operar dois números de 0-255 informados em binário.
+        A resposta deve ser dada também em binário. "
+        aria-label="Button that displays a tooltip when focused or hovered over">
+  Me conte mais
+  </button>
+  </div>
+  </div>
+      </div>
+
+      <div class="card-body">
+        <mat-accordion>
+          <!-- #docregion basic-panel -->
+          <!-- #docregion hide-toggle -->
+
+          <mat-expansion-panel hideToggle>
+          <!-- #enddocregion hide-toggle -->
+              <mat-expansion-panel-header>
+
+                <mat-panel-description>
+Veja aqui qual é o numero binário que irá usar :D                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Número em decimal!!</mat-label>
+                      <input type="number" min="0" max="255" matInput placeholder="Ex. 15"  [(ngModel)]="ValueDEC">
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-md-6">
+
+<h6><b>O seu numero binário é: {{binary}}</b></h6>
+
+                </div>
+                  </div>
+                <button mat-button color="primary" (click)="binario()"> Conferir Número binário</button>
+
+
+           </mat-expansion-panel>
+          <!-- #enddocregion basic-panel -->
+
+          </mat-accordion>
+
+<br>
+<div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Número binário!!</mat-label>
+              <input type="number" min="0" max="255" matInput placeholder="Ex. 101"  [(ngModel)]="ValueDEC1">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Número binário!!</mat-label>
+              <input type="number" min="0" max="255" matInput placeholder="Ex. 100"  [(ngModel)]="ValueDEC2">
+            </mat-form-field>
+
+<br>
+<br>
+
+<!--
+<mat-form-field appearance="fill">
+  <mat-label></mat-label>
+  <mat-select (change)="modo($event.target.value)">
+    <mat-option *ngFor="let op of operator" [value]="op.value">
+      {{op.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+ -->
+
+            <select class="form-select"   aria-label="Default select example" (change)="modo($event.target.value)">
+
+              <option selected>Selecione o Operador Programático</option>
+              <option value="mod1">+</option>
+              <option value="mod2">-</option>
+              <option value="mod3">*</option>
+              <option value="mod4">/</option>
+              <option value="mod5">%</option>
+
+            </select>
+
+
+
+</div>
+          <div class="col-md-6">
+            <b style="padding: 2em;">
+<h6 style="font-size: 16px;">
+ Seu resultado é: {{resultado}}
+</h6>
+</b>
+
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+</div>
